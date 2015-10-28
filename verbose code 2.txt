@@ -1,0 +1,67 @@
+int beforeSize = output.length();//used to tell if nothing or not
+					
+					int current = 1;//counter for array list
+					while(current < result.size() && result.get(current)[5].equals("1"))//first year tutees
+					{
+						output += getStudentString(result,current);
+						current++;
+					}
+					
+					if(beforeSize == output.length())//checking if changed or not
+					{
+						output += "(None)<br/><br/>";
+					}
+					
+					output += "Second Year Tutees: <br/><br/>";//second year tutees
+					
+					beforeSize = output.length();
+					while(current < result.size() && result.get(current)[5].equals("2"))
+					{
+						output += getStudentString(result,current);
+						current++;
+					}
+					
+					if(beforeSize == output.length())
+					{
+						output += "(None)<br/><br/>";
+					}
+					
+					output += "Third Year Tutees: <br/><br/>";//third year tutees
+					beforeSize = output.length();
+					while(current < result.size() && result.get(current)[5].equals("3"))
+					{
+						output += getStudentString(result,current);
+						current++;
+					}
+					
+					if(beforeSize == output.length())
+					{
+						output += "(None)<br/><br/>";
+					}
+					
+					output += "Fourth Year Tutees: <br/><br/>";//fourth year tutees
+					beforeSize = output.length();
+					while(current < result.size() &&result.get(current)[5].equals("4"))
+					{
+						output += getStudentString(result,current);
+						current++;
+					}
+					
+					if(beforeSize == output.length())
+					{
+						output += "(None)<br/><br/>";
+					}
+					
+					output += "Fifth Year Tutees: <br/><br/>";//fifth year tutees
+					beforeSize = output.length();
+					while(current < result.size() && result.get(current)[5].equals("5"))
+					{
+						output += getStudentString(result,current);
+						current++;
+					}
+					
+					if(beforeSize == output.length())
+					{
+						output += "(None)<br/><br/>";
+					}
+

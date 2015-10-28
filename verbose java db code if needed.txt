@@ -1,0 +1,136 @@
+if(valuesToEnter[0] == null)//checking for null values
+		{
+			this.getInsertStmt().setNull(1,Types.INTEGER);
+		}
+		else
+		{
+			this.getInsertStmt().setInt(1,Integer.parseInt(valuesToEnter[0]));
+		}
+		if(valuesToEnter[1] == null)
+		{
+			this.getInsertStmt().setNull(2,Types.INTEGER);
+		}
+		else
+		{
+			this.getInsertStmt().setInt(2,Integer.parseInt(valuesToEnter[1]));
+		}
+		
+		if(valuesToEnter[2] == null)
+		{
+			this.getInsertStmt().setNull(3,Types.CHAR);
+		}
+		else
+		{
+			this.getInsertStmt().setString(3,valuesToEnter[2]);
+		}
+		
+		if(valuesToEnter[3] == null)
+		{
+			this.getInsertStmt().setNull(4,Types.CHAR);
+		}
+		else
+		{
+			this.getInsertStmt().setString(4,valuesToEnter[3]);
+		}
+		
+		if(valuesToEnter[4] == null)
+		{
+			this.getInsertStmt().setNull(5,Types.DATE);
+		}
+		else
+		{
+			this.getInsertStmt().setDate(5, Date.valueOf(valuesToEnter[4]));
+		}
+
+
+
+	if(valuesToEnter[0] == null)
+		{
+			this.getInsertStmt().setNull(1,Types.INTEGER);
+		}
+		else
+		{
+			this.insertStmt.setInt(1,Integer.parseInt(valuesToEnter[0]));
+		}
+		
+		if(valuesToEnter[5] == null)
+		{
+			this.getInsertStmt().setNull(2,Types.INTEGER);
+		}
+		else
+		{
+			this.insertStmt.setInt(2,Integer.parseInt(valuesToEnter[5]));
+		}
+		
+		if(valuesToEnter[6] == null)
+		{
+			this.getInsertStmt().setNull(3,Types.INTEGER);
+		}
+		else
+		{
+			this.insertStmt.setInt(3,Integer.parseInt(valuesToEnter[6]));
+		}
+
+if(valuesToEnter[0] == null)
+		{
+			this.getInsertStmt().setNull(1,Types.INTEGER);
+		}
+		else
+		{
+			this.insertStmt.setInt(1,Integer.parseInt(valuesToEnter[0]));
+		}
+		
+		if(valuesToEnter[7] == null)
+		{
+			this.getInsertStmt().setNull(2,Types.CHAR);
+		}
+		else
+		{
+			this.insertStmt.setString(2,valuesToEnter[7]);
+		}
+		
+		if(valuesToEnter[8] == null)
+		{
+			this.getInsertStmt().setNull(3,Types.CHAR);
+		}
+		else
+		{
+			this.insertStmt.setString(3,valuesToEnter[8]);
+		}
+
+	if(valuesToEnter[0] == null)
+		{
+			this.getInsertStmt().setNull(1,Types.INTEGER);
+		}
+		else
+		{
+			this.insertStmt.setInt(1,Integer.parseInt(valuesToEnter[0]));
+		}
+		
+		if(valuesToEnter[9] == null)
+		{
+			this.getInsertStmt().setNull(2,Types.CHAR);
+		}
+		else
+		{
+			this.insertStmt.setString(2,valuesToEnter[9]);
+		}
+		
+		if(valuesToEnter[10] == null)
+		{
+			this.getInsertStmt().setNull(3,Types.CHAR);
+		}
+		else
+		{
+			this.insertStmt.setString(3,valuesToEnter[10]);
+		}
+		
+		if(valuesToEnter[11] == null)
+		{
+			this.getInsertStmt().setNull(4,Types.CHAR);
+		}
+		else
+		{
+			this.insertStmt.setString(4,valuesToEnter[11]);
+		}
+		

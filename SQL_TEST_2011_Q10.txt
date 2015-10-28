@@ -1,0 +1,9 @@
+
+SELECT b1.name
+FROM Borrowers b1
+WHERE b1.borrowerID NOT IN(SELECT l1.borrowerID
+				FROM Loans l1, Loans l2
+				WHERE l1.borrowerID = l2.borrowerID AND( l1.ISBN <> l2.ISBN OR l1.startDate <> l2.startDate) AND l1.startDate BETWEEN l2.startDate AND l2.dueDate );
+
+
+

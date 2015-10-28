@@ -1,0 +1,67 @@
+--1
+SELECT ISBN, title
+FROM Books
+WHERE date = 2005
+ORDER BY ISBN
+
+--2
+SELECT name, address
+FROM Borrowers
+WHERE address LIKE '%London%'
+
+--3
+SELECT DISTINCT Borrowers.name, Borrowers.email
+FROM Borrowers, Reservations
+WHERE Borrowers.borrowerID = Reservations.borrowerID
+ORDER BY Borrowers.name
+
+--4
+SELECT DISTINCT A1.name
+FROM Authors A1, Authors A2
+WHERE A1.ISBN = A2.ISBN AND A2.name = 'Gary Cornell' AND A1.name <> 'Gary Cornell'
+ORDER BY A1.name
+
+--5
+SELECT COUNT(DISTINCT borrowerID) AS RegisteredBorrowersWhoHaveBorrowed
+FROM Loans
+
+--6
+SELECT ISBN
+FROM Loans
+GROUP BY ISBN
+HAVING COUNT(ISBN) > 1
+
+--7
+SELECT DISTINCT Borrowers.name
+FROM Borrowers,Loans
+WHERE Borrowers.borrowerID = Loans.borrowerID AND EXTRACT(YEAR FROM Loans.startDate) = 2007 AND Loans.returned = FALSE
+ORDER BY Borrowers.name DESC
+
+
+--8
+SELECT B1.name
+FROM Borrowers B1
+WHERE B1.debt >= ALL(SELECT B2.debt FROM Borrowers B2)
+
+--With bob
+SELECT B1.name
+FROM Borrowers B1
+WHERE B1.debt = (SELECT MAX(B2.debt) FROM Borrowers B2)
+
+--9
+SELECT COUNT(borrowerID)
+FROM (SELECT DISTINCT L1.borrowerID
+	FROM Loans L1
+	EXCEPT
+	SELECT L2.borrowerID
+	FROM Loans L2
+	WHERE EXTRACT(YEAR FROM L2.startDate) = 2008
+	) AS not2008
+
+--with bob
+SELECT count(Borrowers.borrowerID)
+FROM Borrowers
+WHERE borrowers.borrowerid NOT IN
+  (SELECT Loans.borrowerID
+   FROM Loans
+   WHERE startdate BETWEEN '2008-1-1' AND '2008-12-31');
